@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="_static/katex-math.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Security Policy" href="Security.html" />
+    <link rel="next" title="FAQ’S" href="FAQs.html" />
     <link rel="prev" title="TorchServe Workflows" href="workflows.html" />
   <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -321,7 +321,6 @@
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Torchserve Use Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflows.html">TorchServe Workflows</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Serving large models with Torchserve</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Security.html">Security Policy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FAQs.html">FAQ’S</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Service APIs:</span></p>
@@ -623,7 +622,8 @@ You can also find an example of how to apply this to TorchServe <a class="refere
 <h3>Tune <a class="reference external" href="https://github.com/pytorch/serve/blob/5ee02e4f050c9b349025d87405b246e970ee710b/model-archiver/README">model config YAML file</a><a class="headerlink" href="#tune-model-config-yaml-file" title="Permalink to this heading">¶</a></h3>
 <p>You can tune the model config YAML file to get better performance in the following ways:</p>
 <ul class="simple">
-<li><p>Update the <a class="reference external" href="https://github.com/pytorch/serve/blob/5ee02e4f050c9b349025d87405b246e970ee710b/docs/configuration.md?plain=1#L216">responseTimeout</a> if high model loading or inference latency causes response timeout.</p></li>
+<li><p>Update the <a class="reference external" href="https://github.com/pytorch/serve/blob/5ee02e4f050c9b349025d87405b246e970ee710b/docs/configuration.md?plain=1#L216">responseTimeout</a> if high model inference latency causes response timeout.</p></li>
+<li><p>Update the <a class="reference external" href="https://github.com/pytorch/serve/blob/5ee02e4f050c9b349025d87405b246e970ee710b/docs/configuration.md?plain=1#L216">startupTimeout</a> if high model loading latency causes startup timeout.</p></li>
 <li><p>Tune the <a class="reference external" href="https://github.com/pytorch/serve/blob/2f1f52f553e83703b5c380c2570a36708ee5cafa/model-archiver/README.md?plain=1#L179">torchrun parameters</a>. The supported parameters are defined at <a class="reference external" href="https://github.com/pytorch/serve/blob/2f1f52f553e83703b5c380c2570a36708ee5cafa/frontend/archive/src/main/java/org/pytorch/serve/archive/model/ModelConfig.java#L329">here</a>. For example, by default, <code class="docutils literal notranslate"><span class="pre">OMP_NUMBER_THREADS</span></code> is 1. This can be modified in the YAML file.</p></li>
 </ul>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1">#frontend settings</span>
@@ -727,7 +727,7 @@ You can also find an example of how to apply this to TorchServe <a class="refere
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Security.html" class="btn btn-neutral float-right" title="Security Policy" accesskey="n" rel="next">Next <img src="_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="FAQs.html" class="btn btn-neutral float-right" title="FAQ’S" accesskey="n" rel="next">Next <img src="_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="workflows.html" class="btn btn-neutral" title="TorchServe Workflows" accesskey="p" rel="prev"><img src="_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>

@@ -5,6 +5,7 @@ This script downloads the Resnet-18 model and packs it into a TorchServe mar fil
 import argparse
 import os
 import shutil
+import subprocess
 
 MODEL_PTH_FILE = "resnet18-f37072fd.pth"
 MODEL_STORE = "model_store"
@@ -15,7 +16,11 @@ def download_pth_file(output_file: str) -> None:
     if not os.path.exists(output_file):
         cmd = ["wget", " https://download.pytorch.org/models/resnet18-f37072fd.pth"]
         print("Downloading resnet-18 pth file")
-        os.system(" ".join(cmd))
+        try:
+            subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            print(f"Downloaded resnet-18 pth file to {output_file}")
+        except subprocess.CalledProcessError as e:
+            print(f"Error downloading resnet-18 pth file: {e.stderr.decode()}")
 
 
 def create_mar():
@@ -42,9 +47,12 @@ def create_mar():
             "--handler image_classifier",
             "--force",
         ]
-
     print(f"Archiving resnet-18 model into {MAR_FILE}")
-    os.system(" ".join(cmd))
+    try:
+        subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        print(f"Model archived successfully into {MAR_FILE}")
+    except subprocess.CalledProcessError as e:
+        print(f"Error archiving model: {e.stderr.decode()}")
 
 
 def move_mar_file():

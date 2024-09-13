@@ -16,7 +16,7 @@ STATEFUL_SEQUENCE_CONTINUOUS_PATH = (
 )
 CONFIG_PROPERTIES_PATH = CURR_FILE_PATH.parents[1] / "test" / "config_ts.properties"
 
-YAML_CONFIG = f"""
+YAML_CONFIG = """
 # TorchServe frontend parameters
 minWorkers: 2
 maxWorkers: 2

@@ -284,7 +284,7 @@ class BaseHandler(abc.ABC):
             self.model = self.model.to(memory_format=torch.channels_last)
             self.model = self.model.to(self.device)
             self.model = ipex.optimize(self.model)
-            logger.info(f"Compiled model with ipex")
+            logger.info("Compiled model with ipex")
 
         logger.debug("Model file %s loaded successfully", self.model_pt_path)
 

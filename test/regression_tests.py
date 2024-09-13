@@ -24,14 +24,14 @@ def regression_tests(binaries, pypi, conda, nightly):
     if binaries:
         if pypi:
             if nightly:
-                cmd = f"pip install torchserve-nightly torch-model-archiver-nightly torch-workflow-archiver-nightly"
+                cmd = "pip install torchserve-nightly torch-model-archiver-nightly torch-workflow-archiver-nightly"
             else:
-                cmd = f"pip install torchserve torch-model-archiver torch-workflow-archiver"
+                cmd = "pip install torchserve torch-model-archiver torch-workflow-archiver"
         elif conda:
             if nightly:
-                cmd = f"conda install -c pytorch-nightly torchserve torch-model-archiver torch-workflow-archiver"
+                cmd = "conda install -c pytorch-nightly torchserve torch-model-archiver torch-workflow-archiver"
             else:
-                cmd = f"conda install -c pytorch torchserve torch-model-archiver torch-workflow-archiver"
+                cmd = "conda install -c pytorch torchserve torch-model-archiver torch-workflow-archiver"
         try_and_handle(cmd, False)
         print(f"## In directory: {os.getcwd()}; Executing command: {cmd}")
     else:

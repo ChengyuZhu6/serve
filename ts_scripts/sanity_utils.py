@@ -237,7 +237,7 @@ def test_workflow_sanity():
     if response and response.status_code == 200:
         print(response.text)
     else:
-        print(f"## Failed to register workflow")
+        print("## Failed to register workflow")
         sys.exit(1)
 
     # Run prediction on workflow
@@ -254,7 +254,7 @@ def test_workflow_sanity():
     if response and response.status_code == 200:
         print(response.text)
     else:
-        print(f"## Failed to unregister workflow")
+        print("## Failed to unregister workflow")
         sys.exit(1)
 
     stopped = ts.stop_torchserve()

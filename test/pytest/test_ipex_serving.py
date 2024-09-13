@@ -109,7 +109,7 @@ def start_torchserve(ts_config_file):
     )
 
 
-DEFAULT_CONFIG = f"""
+DEFAULT_CONFIG = """
     minWorkers: 1
     maxWorkers: 1
     responseTimeout: 1500
@@ -136,7 +136,7 @@ DEFAULT_CONFIG = f"""
 
     """
 
-CONFIG_WOQ = f"""
+CONFIG_WOQ = """
     minWorkers: 1
     maxWorkers: 1
     responseTimeout: 1500
@@ -169,7 +169,7 @@ CONFIG_WOQ = f"""
         greedy: true
     """
 
-CONFIG_SQ = f"""
+CONFIG_SQ = """
     minWorkers: 1
     maxWorkers: 1
     responseTimeout: 1500

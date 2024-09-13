@@ -136,7 +136,7 @@ def register_model_and_make_inference_request(expect_model_load_failure=False):
     )
     with open(data_file, "rb") as input_data:
         resp = requests.post(
-            url=f"http://localhost:8080/predictions/mnist_custom_dependencies",
+            url="http://localhost:8080/predictions/mnist_custom_dependencies",
             data=input_data,
         )
         resp.raise_for_status()

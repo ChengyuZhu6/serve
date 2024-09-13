@@ -47,4 +47,4 @@ if __name__ == "__main__":
 
     # Cleanup built images
     if args.cleanup:
-        try_and_handle(f"docker system prune --all --volumes -f", dry_run)
+        try_and_handle("docker system prune --all --volumes -f", dry_run)

@@ -116,7 +116,7 @@ def necessary_files_unavailable():
     elif VLLM_MISSING:
         return {
             "condition": True,
-            "reason": f"VLLM is not installed",
+            "reason": "VLLM is not installed",
         }
     else:
         return {

@@ -143,7 +143,7 @@ def test_managament_api_with_token(setup_torchserve):
 def test_managament_api_with_incorrect_token(setup_torchserve):
     # Using random key
     header = {"Authorization": "Bearer abcd1234"}
-    response = requests.get(f"http://localhost:8081/models/mnist", headers=header)
+    response = requests.get("http://localhost:8081/models/mnist", headers=header)
 
     assert response.status_code == 400, "Token check failed"
 
@@ -317,7 +317,7 @@ def test_priority():
         snapshot_file=config_file_priority, no_config_snapshots=True
     )
 
-    response = requests.get(f"http://localhost:8081/models")
+    response = requests.get("http://localhost:8081/models")
 
     test_utils.stop_torchserve()
 
@@ -347,7 +347,7 @@ def test_priority_env(monkeypatch):
         disable_token=False,
     )
 
-    response = requests.get(f"http://localhost:8081/models")
+    response = requests.get("http://localhost:8081/models")
 
     test_utils.stop_torchserve()
 
@@ -374,7 +374,7 @@ def test_priority_env_cmd(monkeypatch):
         snapshot_file=config_file_priority, no_config_snapshots=True
     )
 
-    response = requests.get(f"http://localhost:8081/models")
+    response = requests.get("http://localhost:8081/models")
 
     test_utils.stop_torchserve()
 
@@ -397,7 +397,7 @@ def test_managament_api_with_incorrect_token_https(setup_torchserve_https):
     # Using random key
     header = {"Authorization": "Bearer abcd1234"}
     response = requests.get(
-        f"https://localhost:8081/models/mnist", headers=header, verify=False
+        "https://localhost:8081/models/mnist", headers=header, verify=False
     )
 
     assert response.status_code == 400, "Token check failed"

@@ -54,7 +54,7 @@ class FooHandler(BaseHandler):
         return [x.item()]
 """
 
-MODEL_CONFIG_YAML = f"""
+MODEL_CONFIG_YAML = """
 #frontend settings
 parallelType: "tp"
 deviceType: "cpu"

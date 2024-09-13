@@ -106,7 +106,7 @@ def launch_instance(
     if not response or len(response["Instances"]) < 1:
         raise Exception("Unable to launch the instance. Did not return any response")
     
-    LOGGER.info(f"Instance launched successfully.")
+    LOGGER.info("Instance launched successfully.")
 
     return response["Instances"][0]
 

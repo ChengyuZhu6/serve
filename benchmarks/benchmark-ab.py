@@ -105,7 +105,7 @@ def json_provider(file_path, cmd_name):
     "-bb",
     type=click.Choice(["ab", "locust"], case_sensitive=False),
     default="ab",
-    help=f"Benchmark backend to use.",
+    help="Benchmark backend to use.",
 )
 @click_config_file.configuration_option(
     provider=json_provider, implicit=False, help="Read configuration from a JSON file"

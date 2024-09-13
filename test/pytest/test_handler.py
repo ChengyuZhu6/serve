@@ -121,7 +121,7 @@ def run_inference_using_url_with_data(purl=None, pfiles=None, ptimeout=120):
     try:
         response = requests.post(url=purl, files=pfiles, timeout=ptimeout)
     except:
-        print(f"sent echo_stream rep=none")
+        print("sent echo_stream rep=none")
         return None
     else:
         print(f"sent echo_stream rep={response}")
@@ -360,7 +360,7 @@ def test_MMF_activity_recognition_model_register_and_inference_on_valid_model():
 
 def test_huggingface_bert_model_parallel_inference():
     number_of_gpus = torch.cuda.device_count()
-    check = os.popen(f"curl http://localhost:8081/models")
+    check = os.popen("curl http://localhost:8081/models")
     print(check)
     if number_of_gpus > 1:
         batch_size = 1

@@ -124,7 +124,7 @@ def register_model_and_make_inference_request():
     )
     with open(data_file, "rb") as input_data:
         requests.post(
-            url=f"http://localhost:8080/predictions/mnist_custom_metrics",
+            url="http://localhost:8080/predictions/mnist_custom_metrics",
             data=input_data,
         )
 

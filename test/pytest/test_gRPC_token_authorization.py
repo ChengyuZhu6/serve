@@ -75,7 +75,7 @@ def test_grpc_api_with_token_auth():
     inference_key = read_key_file("inference")
 
     # register model with incorrect authorization token
-    metadata = (("protocol", "gRPC"), ("authorization", f"Bearer incorrect-token"))
+    metadata = (("protocol", "gRPC"), ("authorization", "Bearer incorrect-token"))
     with pytest.raises(Exception, match=r".*Token Authorization failed.*"):
         register(management_stub, "densenet161", metadata)
 
@@ -84,7 +84,7 @@ def test_grpc_api_with_token_auth():
     register(management_stub, "densenet161", metadata)
 
     # make inference request with incorrect auth token
-    metadata = (("protocol", "gRPC"), ("authorization", f"Bearer incorrect-token"))
+    metadata = (("protocol", "gRPC"), ("authorization", "Bearer incorrect-token"))
     with pytest.raises(Exception, match=r".*Token Authorization failed.*"):
         infer(
             inference_stub,
@@ -103,7 +103,7 @@ def test_grpc_api_with_token_auth():
     )
 
     # unregister model with incorrect authorization token
-    metadata = (("protocol", "gRPC"), ("authorization", f"Bearer incorrect-token"))
+    metadata = (("protocol", "gRPC"), ("authorization", "Bearer incorrect-token"))
     with pytest.raises(Exception, match=r".*Token Authorization failed.*"):
         unregister(management_stub, "densenet161", metadata)
 

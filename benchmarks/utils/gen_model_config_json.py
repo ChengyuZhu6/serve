@@ -77,7 +77,7 @@ def convert_yaml_to_json(yaml_file_path, output_dir):
 
                 for bConfig in benchmark_configs:
                     for i in range(len(processors)):
-                        if type(processors[i]) is str:
+                        if isinstance(processors[i], str):
                             path = "{}/{}".format(output_dir, processors[i])
                             if not os.path.isdir(path):
                                 continue
@@ -90,7 +90,7 @@ def convert_yaml_to_json(yaml_file_path, output_dir):
                             )
                             with open(benchmark_config_file, "w") as outfile:
                                 json.dump(bConfig, outfile, indent=4)
-                        elif type(processors[i]) is dict:
+                        elif isinstance(processors[i], dict):
                             path = "{}/gpu".format(output_dir)
                             if not os.path.isdir(path):
                                 continue

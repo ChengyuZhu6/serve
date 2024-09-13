@@ -99,7 +99,7 @@ class StatefulHandler(BaseHandler, ABC):
                 }
                 self.context.cache[sequence_id]["num_requests"] += 1
 
-                if type(request) is dict and "input" in request:
+                if isinstance(request, dict) and "input" in request:
                     request = request.get("input")
 
                 # -1: cancel

@@ -48,7 +48,7 @@ jobs:
 
       - name: Install lint utilities
         run: |
-          pip install pre-commit
+          pip install pre-commit ruff
           pre-commit install
 
       - name: Get changed files
@@ -63,6 +63,7 @@ jobs:
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             pre-commit run --files $file
+            ruff $file
           done
 
       - name: What to do if this action fails
@@ -73,7 +74,7 @@ jobs:
           echo "cd serve/"
           echo "pre-commit install"
           echo "pre-commit will lint your code for you, so git add and commit those new changes and this check should become green"
-          echo "If you've already pushed some files remotely then run git diff --name-only main | xargs pre-commit run --files"
+          echo "If you've already pushed some files remotely then run git diff --name-only main | xargs pre-commit run --files && ruff"
 
   spellcheck:
     runs-on: ubuntu-20.04

@@ -50,7 +50,6 @@ STATS_METRICS_CONFIG = {
     "memory_percentage_mean": {"name": "memory_percentage_mean", "unit": "Percent"},
     "cpu_percentage_mean": {"name": "cpu_percentage_mean", "unit": "Percent"},
     "gpu_percentage_mean": {"name": "gpu_percentage_mean", "unit": "Percent"},
-    "gpu_percentage_mean": {"name": "gpu_percentage_mean", "unit": "Percent"},
     "gpu_memory_used_mean": {"name": "gpu_memory_used_mean", "unit": "Megabytes"},
 }
 
